@@ -1,0 +1,22 @@
+{
+  "name": "crud-backend-nodejs-jp-2025",
+  "version": "1.0.0",
+  "description": "Aulas de CRUD em backend com Node.js do curso Jovem Programador 2025",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch ./src/index.js",
+    "test": "cross-env TEST=true node --experimental-vm-modules node_modules/jest/bin/jest.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "crossenv": "^0.0.2-security",
+    "express": "^5.1.0",
+    "jest": "^30.2.0",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.15.3",
+    "sequelize": "^6.37.7"
+  }
+}
