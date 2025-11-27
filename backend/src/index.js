@@ -1,8 +1,8 @@
+import cors from 'cors'
 import express from 'express'
+import database from './config/database.js';
 import routerClientes from './router/clientes.js';
 import routerAtendimentos from './router/atendimentos.js'
-import database from './config/database.js';
-import cors from 'cors'
 
 const app = express();
 

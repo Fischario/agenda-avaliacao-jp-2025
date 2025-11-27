@@ -42,9 +42,10 @@ function Atendimentos() {
                     </div>
                     : conteudo.map(atendimento =>
                         <div className='card char' key={atendimento.id}>
-                            <h2>{atendimento.dia}</h2>
-                            <h2>{atendimento.hora}</h2>
-                            <h2>{atendimento.valor}</h2>
+                            <h2>Data: {atendimento.dia}</h2>
+                            <h2>Hora: {atendimento.hora}</h2>
+                            <h2>Valor: {atendimento.valor}</h2>
+                            <h2>Concluido: {atendimento.concluido ? 'Sim' : 'Não'}</h2>
                             <div className='actions'>
                                 <button type='button' onClick={() => handleUpdate(atendimento)}>Alterar</button>
                                 <button type='button' onClick={() => handleDelete(atendimento.id)}>Deletar</button>

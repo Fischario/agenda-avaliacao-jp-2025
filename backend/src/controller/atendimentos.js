@@ -3,22 +3,30 @@ import ServiceAtendimento from '../service/atendimentos.js'
 class ControllerAtendimento {
     async FindAll(req, res) {
         try {
-            const clienteId = req.body.clienteId
+            const clienteId = req.headers.cliente.id
             const atendimentos = await ServiceAtendimento.FindAll(clienteId)
             res.status(200).send({ atendimentos })
         } catch (error) {
             res.status(500).send({ error: error.message })
         }
     }
-    async FindOne(req, res) {
+    async FindAllAll(req, res) {
         try {
-            const id = req.params.id
-            const atendimento = await ServiceAtendimento.FindOne(id)
-            res.status(200).send({ atendimento })
+            const atendimentos = await ServiceAtendimento.FindAllAll()
+            res.status(200).send({ atendimentos })
         } catch (error) {
             res.status(500).send({ error: error.message })
         }
     }
+    // async FindOne(req, res) {
+    //     try {
+    //         const id = req.params.id
+    //         const atendimento = await ServiceAtendimento.FindOne(id)
+    //         res.status(200).send({ atendimento })
+    //     } catch (error) {
+    //         res.status(500).send({ error: error.message })
+    //     }
+    // }
     async Create(req, res) {
         try {
             const { dia, hora, valor, concluido } = req.body
@@ -33,6 +41,7 @@ class ControllerAtendimento {
         try {
             const id = req.params.id
             const { dia, hora, valor, concluido } = req.body
+            console.log({ dia, hora, valor, concluido })
             await ServiceAtendimento.Update(id, dia, hora, valor, concluido)
             res.status(200).send()
         } catch (error) {

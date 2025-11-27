@@ -7,7 +7,7 @@ export default function authMiddleware() {
     return async (req, res, next) => {
         try {
             const token = req.headers['authorization']
-            console.log(token.split(' ').pop(0))
+            // console.log(token.split(' ').pop(0))
         
             if (!token) {
                 throw new Error('Tu n pode faze isso n mané, tá chapano maluko')

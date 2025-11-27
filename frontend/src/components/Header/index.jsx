@@ -1,5 +1,5 @@
-import { useContext } from 'react'
 import './style.css'
+import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { AuthContext } from '../../auth/Context'
 
@@ -9,7 +9,7 @@ export default function Header() {
 
     return (
         <header>
-            <h1>Fullstack</h1>
+            <h1>Avaliação Agenda</h1>
             <nav>
                 <Link to={'/'}>
                     <h2>Home</h2>
@@ -23,6 +23,10 @@ export default function Header() {
 
                         <Link to={'/atendimentos'}>
                             <h2>Atendimentos</h2>
+                        </Link>
+                        
+                        <Link to={'/todosatendimentos'}>
+                            <h2>Todos Atendimentos</h2>
                         </Link>
                     </>
                 }

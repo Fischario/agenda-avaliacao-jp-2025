@@ -10,6 +10,16 @@ export const getAtendimentos = async () => {
     return response.data.atendimentos
 }
 
+export const getTodosAtendimentos = async () => {
+    const response = await api.get('api/v1/todosatendimentos')
+
+    if (response.status != 200) {
+        throw new Error(response.status)
+    }
+
+    return response.data.atendimentos
+}
+
 export const createAtendimento = async (atendimento) => {
     const response = await api.post('api/v1/atendimento', atendimento)
     

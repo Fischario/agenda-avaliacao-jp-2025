@@ -42,8 +42,8 @@ function Clientes() {
                     </div>
                     : conteudo.map(cliente =>
                         <div className='card char' key={cliente.id}>
-                            <h2>{cliente.nome}</h2>
-                            <h2>{cliente.email}</h2>
+                            <h2>Nome: {cliente.nome}</h2>
+                            <h2>Email: {cliente.email}</h2>
                             <div className='actions'>
                                 <button type='button' onClick={() => handleUpdate(cliente)}>Alterar</button>
                                 <button type='button' onClick={() => handleDelete(cliente.id)}>Deletar</button>

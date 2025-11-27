@@ -45,7 +45,10 @@ export default function CreateAtendimento() {
                 </div>
                 <div>
                     <label>Concluido: </label>
-                    <input type="checkbox" name="concluido" id="concluido" value={atendimento.concluido} onChange={handleChange} />
+                    <select name="concluido" id="concluido" value={atendimento.concluido} onChange={handleChange}>
+                        <option value="true">Sim</option>
+                        <option value="false">Não</option>
+                    </select>
                 </div>
                 <button type="submit" onClick={handleSave}>Enviar</button>
                 <button type="reset">Limpar</button>

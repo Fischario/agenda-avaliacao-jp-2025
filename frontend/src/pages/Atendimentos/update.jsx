@@ -35,9 +35,9 @@ export default function UpdateAtendimento() {
 
         if (response.status === 200) {
             navigate('/atendimentos')
-            console.log("Usuário alterado com sucesso")
+            console.log("Atendimento alterado com sucesso")
         } else {
-            console.log("Erro ao criar Usuário")
+            console.log("Erro ao alterar atendimento")
             console.log(response)
         }
 
@@ -47,25 +47,26 @@ export default function UpdateAtendimento() {
         <main>
             <form>
                 <div>
-                    <label>Nome:</label>
-                    <input type="text" name="nome" id="nome" value={atendimento.nome} onChange={handleChange} />
+                    <label>Dia: </label>
+                    <input type="date" name="dia" id="dia" value={atendimento.dia} onChange={handleChange} />
                 </div>
                 <div>
-                    <label>Email:</label>
-                    <input type="email" name="email" id="email" value={atendimento.email} onChange={handleChange} />
+                    <label>Hora: </label>
+                    <input type="time" name="hora" id="hora" value={atendimento.hora} onChange={handleChange} />
                 </div>
                 <div>
-                    <label>Senha:</label>
-                    <input type="password" name="senha" id="senha" value={atendimento.senha} onChange={handleChange} />
+                    <label>Valor: </label>
+                    <input type="text" name="valor" id="valor" value={atendimento.valor} onChange={handleChange} />
                 </div>
-                <button 
-                    type="reset"
-                    onClick={handleReset}
-                >Limpar</button>
-                <button
-                    type="submit"
-                    onClick={handleSave}
-                >Enviar</button>
+                <div>
+                    <label>Concluido: </label>
+                    <select name="concluido" id="concluido" value={atendimento.concluido} onChange={handleChange}>
+                        <option value="true">Sim</option>
+                        <option value="false">Não</option>
+                    </select>
+                </div>
+                <button type="reset" onClick={handleReset}>Limpar</button>
+                <button type="submit" onClick={handleSave}>Enviar</button>
             </form>
         </main>
     )

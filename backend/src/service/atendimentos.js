@@ -4,19 +4,22 @@ class ServiceAtendimento {
     async FindAll(id) {
         return await Atendimento.findAll( { where: { clienteId: id } } )
     }
-    async FindOne(id) {
-        if (!id) {
-            throw new Error('Favor informar o id')
-        }
-
-        const atendimento = await Atendimento.findByPk(id)
-
-        if (!atendimento) {
-            throw new Error(`Atendimento ${id} não encontrado`)
-        }
-
-        return atendimento
+    async FindAllAll() {
+        return await Atendimento.findAll()
     }
+    // async FindOne(id) {
+    //     if (!id) {
+    //         throw new Error('Favor informar o id')
+    //     }
+
+    //     const atendimento = await Atendimento.findByPk(id)
+
+    //     if (!atendimento) {
+    //         throw new Error(`Atendimento ${id} não encontrado`)
+    //     }
+
+    //     return atendimento
+    // }
     async Create(dia, hora, valor, concluido, clienteId) {
         if (!dia || !hora || !valor || !clienteId) {
             throw new Error('Favor preencher todos os campos')

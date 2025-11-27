@@ -20,18 +20,15 @@ export const AuthContext = createContext()
 
 export const AuthProvider = ({ children }) => {
     const [token, setToken] = useState(null)
-    // const [clienteId, setClienteId] = useState(null)
 
     const login = (token) => {
         setToken(token)
         localStorage.setItem('token', token)
-        localStorage.setItem('clienteLogado', pegarIdCliente(token))
     }
 
     const logout = () => {
         setToken(null)
         localStorage.removeItem('token')
-        localStorage.removeItem('clienteLogado')
     }
 
     useEffect(() => {
