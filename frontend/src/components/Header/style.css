@@ -1,0 +1,33 @@
+@import '../../raizera.css';
+
+header {
+    background-color: black;
+    color: white;
+    padding: 2.2em;
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Alinha Verticalmente */
+    justify-content: center; /* Alinha Horizontalmente */
+    border-bottom: 3.5px solid var(--cor-primaria);
+    gap: 20px;
+    transition: 0.2s;
+}
+
+h2 {
+    margin: 0;
+    padding-top: 4px;
+}
+
+a:hover {
+    color: var(--cor-primaria);
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+header::selection {
+    color: black;
+    background-color: var(--cor-primaria);
+}
