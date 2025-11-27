@@ -1,4 +1,5 @@
 import database from "../config/database.js"
+// import Cliente from './clientes.js'
 
 class Atendimento {
     constructor() {
@@ -19,6 +20,13 @@ class Atendimento {
             },
             concluido: {
                 type: database.db.Sequelize.BOOLEAN
+            },
+            clienteId: {
+                type: database.db.Sequelize.INTEGER,
+                references: {
+                    model: 'clientes',
+                    key: 'id'
+                }
             }
         })
     }

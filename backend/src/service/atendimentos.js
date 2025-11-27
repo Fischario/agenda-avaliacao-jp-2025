@@ -1,8 +1,8 @@
 import Atendimento from '../model/atendimentos.js'
 
 class ServiceAtendimento {
-    async FindAll() {
-        return await Atendimento.findAll()
+    async FindAll(id) {
+        return await Atendimento.findAll( { where: { clienteId: id } } )
     }
     async FindOne(id) {
         if (!id) {
@@ -17,12 +17,12 @@ class ServiceAtendimento {
 
         return atendimento
     }
-    async Create(dia, hora, valor, concluido) {
-        if (!dia || !hora || !valor) {
+    async Create(dia, hora, valor, concluido, clienteId) {
+        if (!dia || !hora || !valor || !clienteId) {
             throw new Error('Favor preencher todos os campos')
         }
 
-        await Atendimento.create({ dia, hora, valor, concluido})
+        await Atendimento.create({ dia, hora, valor, concluido, clienteId})
     }
     async Update(id, dia, hora, valor, concluido) {
         if (!id) {
