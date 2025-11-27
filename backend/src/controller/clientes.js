@@ -9,15 +9,15 @@ class ControllerCliente {
             res.status(500).send({ error: error.message })
         }
     }
-    async FindOne(req, res) {
-        try {
-            const id = req.params.id
-            const cliente = await ServiceCliente.FindOne(id)
-            res.status(200).send({ cliente })
-        } catch (error) {
-            res.status(500).send({ error: error.message })
-        }
-    }
+    // async FindOne(req, res) {
+    //     try {
+    //         const id = req.params.id
+    //         const cliente = await ServiceCliente.FindOne(id)
+    //         res.status(200).send({ cliente })
+    //     } catch (error) {
+    //         res.status(500).send({ error: error.message })
+    //     }
+    // }
     async Create(req, res) {
         try {
             const { nome, email, senha } = req.body

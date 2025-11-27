@@ -35,9 +35,9 @@ export default function UpdateCliente() {
 
         if (response.status === 200) {
             navigate('/clientes')
-            console.log("Usuário alterado com sucesso")
+            console.log("Cliente alterado com sucesso")
         } else {
-            console.log("Erro ao criar Usuário")
+            console.log("Erro ao alterar cliente")
             console.log(response)
         }
 
@@ -58,14 +58,8 @@ export default function UpdateCliente() {
                     <label>Senha:</label>
                     <input type="password" name="senha" id="senha" value={cliente.senha} onChange={handleChange} />
                 </div>
-                <button 
-                    type="reset"
-                    onClick={handleReset}
-                >Limpar</button>
-                <button
-                    type="submit"
-                    onClick={handleSave}
-                >Enviar</button>
+                <button type="reset" onClick={handleReset}>Limpar</button>
+                <button type="submit" onClick={handleSave}>Enviar</button>
             </form>
         </main>
     )

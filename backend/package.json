@@ -1,7 +1,7 @@
 {
-  "name": "crud-backend-nodejs-jp-2025",
+  "name": "agenda-avaliacao-jp-2025",
   "version": "1.0.0",
-  "description": "Aulas de CRUD em backend com Node.js do curso Jovem Programador 2025",
+  "description": "Última avaliação do curso Jovem Programador 2025. Finish Him.",
   "main": "index.js",
   "type": "module",
   "scripts": {
